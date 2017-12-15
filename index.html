@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Flatiron Task Lister</title>
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="node_modules/mocha/mocha.css">
 </head>
 <body>
@@ -21,7 +20,13 @@
       <input type="submit" value="Create New Task">
     </form><!-- #create-task-form -->
 
-    <section id="tasks"></section>
+
+    <div id="list">
+      <h2>My Todos</h2>
+      <ul id="tasks">
+      </ul>
+    </div>
+
 
 
     <!-- <div> for Mocha to display test results. -->

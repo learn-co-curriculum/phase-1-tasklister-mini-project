@@ -1,0 +1,26 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+  margin: 0 0;
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(#006653, #005366);
+}
+
+#main-content {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border:1px solid #333;
+	background: rgba(255,255,255,.3);
+	padding:15px 20px 18px 18px;
+	border-radius:5px;
+	margin:0 2% 2% 0;
+	box-shadow: 2px 5px 5px #333; */
+}
