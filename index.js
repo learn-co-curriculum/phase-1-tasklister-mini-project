@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const createNewTask = event => {
-  //stop form from trying to submit
   event.preventDefault();
+  //stop form from trying to submit
   const newTaskDescription = document.getElementById("new-task-description");
   const newTask = document.createElement("li");
   newTask.innerText = newTaskDescription.value;
