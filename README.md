@@ -1,6 +1,6 @@
 # Diet TaskLister™️
 
-## Hello and welcome to TaskLister Lite™️
+## Hello and Welcome to TaskLister Lite™️
 
 Today you'll be creating a simple to do list application that will focus on DOM manipulation.
 
