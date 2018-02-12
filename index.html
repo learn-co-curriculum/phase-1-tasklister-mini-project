@@ -5,7 +5,6 @@
   <title>Flatiron Task Lister</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="node_modules/mocha/mocha.css">
 </head>
 <body>
   <div id="main-content">
@@ -19,22 +18,12 @@
       <label for="new-task-priority">Priority level:</label>
       <input type="text" id="new-task-priority" name="new-task-priority" placeholder="priority">
       <input type="submit" value="Create New Task">
-    </form><!-- #create-task-form -->
+    </form>
 
     <section id="tasks"></section>
+    <script src="./index.js"></script>
 
-
-    <!-- <div> for Mocha to display test results. -->
-    <div id="mocha"></div>
-    <script src="node_modules/mocha/mocha.js"></script>
-    <script>mocha.setup('bdd');</script>
-    <script src="node_modules/chai/chai.js"></script>
-    <script src="index.js"></script>
-    <script src="test/taskTest.js"></script>
-    <!-- <script src="test/listTest.js"></script>
-    <script src="test/appTest.js"></script> -->
-    <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
-  </div><!-- #main-content -->
+  </div>
 
 </body>
 </html>
