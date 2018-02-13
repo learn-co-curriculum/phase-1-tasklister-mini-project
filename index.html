@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Flatiron Task Lister</title>
   <link rel="stylesheet" href="./style.css">
-  <!-- <link rel="stylesheet" href="node_modules/mocha/mocha.css"> -->
 </head>
 <body>
   <div id="main-content">
@@ -14,8 +13,7 @@
       <label for="new-task-description">Task description:</label>
       <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
       <input type="submit" value="Create New Task">
-    </form><!-- #create-task-form -->
-
+    </form>
 
     <div id="list">
       <h2>My Todos</h2>
@@ -23,19 +21,9 @@
       </ul>
     </div>
 
+    <script src="./index.js"></script>
 
-
-    <script src="index.js"></script>
-    <!-- <div> for Mocha to display test results. -->
-    <!-- <div id="mocha"></div>
-    <script src="node_modules/mocha/mocha.js"></script>
-    <script>mocha.setup('bdd');</script>
-    <script src="node_modules/chai/chai.js"></script>
-    <script src="test/indexTest.js"></script>
-    <script src="test/listTest.js"></script>
-    <script src="test/appTest.js"></script>
-    <script src="node_modules/learn-browser/learnBrowser.min.js"></script> -->
-  </div><!-- #main-content -->
+  </div>
 
 </body>
 </html>
