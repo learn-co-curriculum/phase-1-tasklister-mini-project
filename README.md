@@ -2,7 +2,7 @@
 
 ## Hello and Welcome to TaskLister Lite™️
 
-Today you'll be creating a simple to do list application that will focus on DOM manipulation. Take a look at `index.html` before you write any code; think about which DOM elements you will grab input fun, and which elements would be ideal to store information
+Today you'll be creating a simple to do list application that will focus on DOM manipulation. Take a look at `index.html` before you write any code; think about which DOM elements you will grab input from, and which elements would be ideal to store information
 
 ### Instructions:
 
