@@ -11,7 +11,7 @@ Today you'll be creating a simple to do list application that will focus on DOM 
 3. Put you JavaScript knowledge to the test and build out the desired functionality of this app: as a user, I should be able to type a task into the input field, submit the form, and see that task appear on the DOM.
 
 ### Stretch Goals:
-If you finish early (which you probably will), try to implement one or more of the following:
+If you finish early, try to implement one or more of the following:
 
 - A delete function that will remove tasks from your list
 - A priority value selected from a dropdown that is used to determine the color of the text in the list (e.g. red for high priority, yellow for medium, green for low)
