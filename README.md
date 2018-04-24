@@ -4,6 +4,8 @@
 
 Today you'll be creating a simple to do list application that will focus on DOM manipulation. Take a look at `index.html` before you write any code; think about which DOM elements you will grab input from, and which elements would be ideal to store information
 
+Check out the [working demo](https://learn-co-curriculum.github.io/js-task-lister-lite/)
+
 ### Instructions:
 
 1. Fork and clone this Repo. It is entirely behavior-driven so there will be no tests.
