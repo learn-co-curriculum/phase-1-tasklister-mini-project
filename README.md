@@ -1,4 +1,4 @@
-# Diet TaskLister™️
+# TaskLister Lite™️
 
 ## Hello and Welcome to TaskLister Lite™️
 
