@@ -16,13 +16,20 @@ Instead of relying on unit tests, this lab is deliverable driven. You will be re
 3. Put you JavaScript knowledge to the test and work your way through the deliverables
 
 
+### Structuring Your Code:
+
+You've been provided with three JavaScript starter files: oo_index, task and taskList. As you build larger JS projects, structuring and separating your code will become more necessary. For this project we suggest implementing MVC architecture.
+
+Your task file is your model. It is responsible for creating tasks and assigning attributes to them. Your view is your index.html. It contains the HTML template for our single-page application. The controller transfers information between the model and the view. TaskList is your controller. It puts information onto the DOM and can read information from it. Just like in Rails, your controller can read params and instantiate new objects which it will then render on the DOM.
+
+
 ### Deliverables:
 
 - users should be able to type a task into the input field
 - users should be able to click some form of a submit button
 - the task string that the user provided should appear on the DOM after the submit button has been activated
 
-**Note:** [While the example][example] shows one working application of TaskLister Lite™️, yours can (and is encouraged to!) look however you like. 
+**Note:** [While the example][example] shows one working application of TaskLister Lite™️, yours can (and is encouraged to!) look however you like.
 
 
 ### Stretch Deliverables:
