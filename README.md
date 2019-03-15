@@ -18,10 +18,7 @@ Instead of relying on unit tests, this lab is deliverable driven. You will be re
 
 ### Structuring Your Code:
 
-You've been provided with three JavaScript starter files: oo_index, task and taskList. As you build larger JS projects, structuring and separating your code will become more necessary. For this project we suggest implementing MVC architecture. However, you are free to structure your code however you want, with or without MVC or classes.
-
-Your task file is your model. It is responsible for creating tasks and assigning attributes to them. Your view is your index.html. It contains the HTML template for our single-page application. The controller transfers information between the model and the view. TaskList is your controller. It puts information onto the DOM and can read information from it. Just like in Rails, your controller can read params and instantiate new objects which it will then render on the DOM.
-
+You've been provided with a basic HTML file, as well as a `src/index.js` file where you can implement your solution. Focus on getting the feature working while using your knowledge to write readable, maintainable code. 
 
 ### Deliverables:
 
