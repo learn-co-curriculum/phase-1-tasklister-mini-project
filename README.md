@@ -24,9 +24,9 @@ while using your knowledge to write readable, maintainable code.
 
 ## Deliverables:
 
-- As an user, I should be able to type a task into the input field.
-- As an user, I should be able to click some form of a submit button.
-- As an user, the task string that I provided should appear on the DOM after the submit button has been activated.
+- As a user, I should be able to type a task into the input field.
+- As a user, I should be able to click some form of a submit button.
+- As a user, the task string that I provided should appear on the DOM after the submit button has been activated.
 
 **Note:** [While the example][example] shows one working application of TaskLister Lite™️, yours can (and is encouraged to!) look however you like.
 
