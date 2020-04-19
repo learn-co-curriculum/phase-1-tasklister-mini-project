@@ -8,7 +8,7 @@ Check out the [working demo][example]!
 
 ## Learning Goals:
 
-* Squelch a default action with `Event.preventDefault`
+* Squelch a default action with `event.preventDefault`
 
 ## Instructions:
 
