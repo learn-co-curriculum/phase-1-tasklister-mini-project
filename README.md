@@ -41,7 +41,7 @@ The deliverables require you to handle an event in a form based on clicking a su
 By default, Form elements automatically submit the form, which redirects the browser to a new url. This _is not_ the experience we want to build in this lab. We want to _prevent_ that event from performing its _default_ behavior (submitting the form), because ***we*** want to update the DOM using JavaScript. In order to _prevent_ the _default_ behavior of the
 `submit` event, when our handler "sees" the event, it needs to invoke the `preventDefault()` method on it.
 
-Take a look at the [MDN Documentation on `Event.preventDefault`][mdn-pd]. You'll see how JavaScript is used to prevent a form element (checkbox) from doing it's _default_ behavior (appearing checked upon click). You'll want to prevent `submit` from doing it's default behavior in a similar fashion.
+Take a look at the [MDN Documentation on `Event.preventDefault`][mdn-pd]. You'll see how JavaScript is used to prevent a form element (checkbox) from doing its _default_ behavior (appearing checked upon click). You'll want to prevent `submit` from doing its default behavior in a similar fashion.
 
 ## Stretch Deliverables:
 
