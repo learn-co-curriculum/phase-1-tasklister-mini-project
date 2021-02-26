@@ -1,58 +1,139 @@
-# TaskLister Lite™️
+# Challenge: TaskLister Mini-Project
 
-Today you'll be creating a simple to do list application that will focus on DOM
-manipulation. Take a look at `index.html` and identify the DOM elements you'll
-need to manipulate before you write any code.
+## Learning Goals
+
+* Build a functioning to-do list application
+* Suppress a default action with `event.preventDefault()`
+
+## Introduction
+
+In this lab, you'll be creating a simple to-do list application that uses
+JavaScript to manipulate the DOM.
 
 Check out the [working demo][example]!
 
-## Learning Goals:
+## Lab: Build a Functioning To-do List Application
 
-* Squelch a default action with `event.preventDefault`
-
-## Instructions:
-
-Instead of relying on unit tests, this lab is deliverable driven. You will be
-responsible for asserting your solution works as intended by testing the
+Instead of relying on tests, this lab is _deliverable driven_. You will be
+responsible for ensuring that your solution works as intended by testing the
 behavior visually in the browser.
 
 1. Fork and clone this repository
-2. Open `index.html` in Chrome (Tip: you can use `open index.html` in bash and, as long as Chrome is your default application for opening `.html` files, it will automatically open the file)
-3. Put your JavaScript knowledge to the test and work your way through the deliverables
+2. Open `index.html` in Chrome
+3. Put your JavaScript knowledge to the test and work your way through the
+   deliverables
 
-## Structuring Your Code:
+### Structuring Your Code
 
-You've been provided with a basic HTML file, as well as a `src/index.js` file
-where you can implement your solution. Focus on getting the feature working
-while using your knowledge to write readable, maintainable code. 
+You've been provided with a basic HTML file, as well as an `index.js` file where
+you can implement your solution. Note that the `index.js` file is contained
+within a `src` folder — this is a common pattern that you will see in many labs
+moving forward. If you take a look at the `index.html` file, you'll see that the
+`script` tag that loads the code file includes the `src` directory in its path:
 
-## Deliverables:
+```html
+<script src="./src/index.js"></script>
+```
 
-- As a user, I should be able to type a task into the input field.
-- As a user, I should be able to click some form of a submit button.
-- As a user, the task string that I provided should appear on the DOM after the submit button has been activated.
+### Deliverables
 
-**Note:** [While the example][example] shows one working application of TaskLister Lite™️, yours can (and is encouraged to!) look however you like.
+* As a user, I should be able to type a task into the input field.
+* As a user, I should be able to click some form of a submit button.
+* As a user, I expect to see the task string that I provided appear on the DOM
+  after the submit button has been activated.
 
-## Squelch a Default Action with `Event.preventDefault`
+> **Note:** [While the example][example] shows one possible working
+> implementation of the TaskLister app, yours can (and is encouraged to!) look
+> however you like!
 
-The deliverables require you to handle an event in a form based on clicking a submit button. You're going to need to listen for a `submit` event on the `<form>` element. 
+### HTML Forms
 
-By default, Form elements automatically submit the form, which redirects the browser to a new url. This _is not_ the experience we want to build in this lab. We want to _prevent_ that event from performing its _default_ behavior (submitting the form), because ***we*** want to update the DOM using JavaScript. In order to _prevent_ the _default_ behavior of the
-`submit` event, when our handler "sees" the event, it needs to invoke the `preventDefault()` method on it.
+For this lab, we are going to be using the [HTML `<form>` element][form] to
+capture the tasks the user enters. A basic HTML form consists of opening and
+closing `<form>` tags that enclose one or more `<input>` elements where users
+can enter information, as well as an `<input>` element that enables users to
+submit the form. There are many types of [input fields][] to choose from; we use
+the `type` attribute to specify the one we want. For this lab, we are using two:
+a text field (`type="text"`) and a submit button (`type="submit"`).
 
-Take a look at the [MDN Documentation on `Event.preventDefault`][mdn-pd]. You'll see how JavaScript is used to prevent a form element (checkbox) from doing its _default_ behavior (appearing checked upon click). You'll want to prevent `submit` from doing its default behavior in a similar fashion.
+If you look in the `index.html` file, you will see the following:
 
-## Stretch Deliverables:
+```html
+    <form id="create-task-form" action="#" method="POST">
+      <label for="new-task-description">Task description:</label>
+      <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
+      <input type="submit" value="Create New Task">
+    </form>
+```
 
-If you finish early, try to implement one or more of the following:
+Now take a look at the page in your browser. The rendered form looks like this:
 
-- A delete function that will remove tasks from your list
-- A priority value selected from a dropdown that is used to determine the color of the text in the list (e.g. red for high priority, yellow for medium, green for low)
-  - As an additional challenge, implement a sorting functionality that displays the tasks in ascending or descending order based on priority
-- An additional input field (e.g. user, duration, date due)
-- Ability to edit tasks
-- Something of your choice! The main objective is to add a feature that allows the user's input to affect the DOM
+[image here]
+
+You can see each of the components that are in our form's HTML:
+
+1. the label for our input field ("Task description:")
+2. the input box, with the placeholder content "description", and
+3. the button that's created by the `submit` input tag
+
+Let's take a closer look at the opening `<form>` tag. You'll see it includes an
+(optional) `id` attribute and two other attributes:
+
+```html
+<form id="create-task-form" action="#" method="post">
+```
+
+Because HTML forms were designed to be handled by backend programming languages
+such as PHP, the `action` attribute would normally contain a path to the backend
+code that processes the data captured by the user. Because we will be handling
+the form using JavaScript, we don't need to provide a path. By convention, we
+set that attribute to `"#"`.
+
+The `method` attribute specifies the _type_ of action we're executing when the
+form is submitted. The value of the `method` attribute (in this case, "POST") is
+an _HTTP Verb_. (Although it is not required, you will often see HTTP verbs in
+all caps.) We will learn more about HTTP Verbs in the next section. For now,
+just know that the `POST` method is used when we want to capture the data
+submitted by our form and use it in some way.
+
+By default, the HTML `<form>` element submits the form and redirects the browser
+to a new url when the `<submit>` button is clicked. This default behavior makes
+sense when form submission is being handled by a back-end programming language.
+However, this _is not_ the experience we want to build in this lab. We instead
+want to handle the submission of the form using JavaScript and update the DOM
+without reloading the page. Therefore, we need to prevent that event from
+performing its default behavior.
+
+### Suppress a Default Action with `Event.preventDefault()`
+
+The deliverables for this require you to use JavaScript to handle an event in a
+form based on clicking a submit button. To do this, you'll need to listen for a
+`submit` event on the `<form>` element. In order to _prevent_ the _default_
+behavior of the `submit` event, when our event listener "sees" the event, it
+needs to invoke the `preventDefault()` method on it.
+
+Take a look at the [MDN Documentation on `Event.preventDefault()`][mdn-pd].
+You'll see how JavaScript is used to prevent a form element (checkbox) from
+doing its _default_ behavior (appearing checked upon click). You'll want to
+prevent `submit` from doing its default behavior in a similar fashion.
+
+### Stretch Deliverables
+
+Once you've got the required deliverables working, you may want to try to
+implement one or more of the following:
+
+* A delete function that will remove tasks from your list
+* A priority value selected from a dropdown that is used to determine the color
+  of the text in the list (e.g. red for high priority, yellow for medium, green
+  for low)
+  * As an additional challenge, implement a sorting functionality that displays
+    the tasks in ascending or descending order based on priority
+* An additional input field (e.g. user, duration, date due)
+* Ability to edit tasks
+* Something of your choice! The main objective is to add a feature that allows
+  the user's input to affect the DOM
 
 [example]: https://learn-co-curriculum.github.io/js-task-lister-lite/
 [mdn-pd]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+[form]: https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form
+[input fields]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
