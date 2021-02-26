@@ -12,11 +12,11 @@ JavaScript to manipulate the DOM.
 
 Check out the [working demo][example]!
 
-## Lab: Build a Functioning To-do List Application
+## Lab: Build a Functioning To-Do List Application
 
 Instead of relying on tests, this lab is _deliverable driven_. You will be
 responsible for ensuring that your solution works as intended by testing the
-behavior visually in the browser.
+behavior in the browser.
 
 1. Fork and clone this repository
 2. Open `index.html` in Chrome
@@ -39,7 +39,7 @@ moving forward. If you take a look at the `index.html` file, you'll see that the
 
 * As a user, I should be able to type a task into the input field.
 * As a user, I should be able to click some form of a submit button.
-* As a user, I expect to see the task string that I provided appear on the DOM
+* As a user, I expect to see the task string that I provided appear in the DOM
   after the submit button has been activated.
 
 > **Note:** [While the example][example] shows one possible working
@@ -49,12 +49,13 @@ moving forward. If you take a look at the `index.html` file, you'll see that the
 ### HTML Forms
 
 For this lab, we are going to be using the [HTML `<form>` element][form] to
-capture the tasks the user enters. A basic HTML form consists of opening and
-closing `<form>` tags that enclose one or more `<input>` elements where users
-can enter information, as well as an `<input>` element that enables users to
-submit the form. There are many types of [input fields][] to choose from; we use
-the `type` attribute to specify the one we want. For this lab, we are using two:
-a text field (`type="text"`) and a submit button (`type="submit"`).
+capture the tasks the user enters. HTML forms can be quite complex and
+sophisticated but, at their most basic, consist of opening and closing `<form>`
+tags that enclose one or more `<input>` elements where users can enter
+information, and a way to submit the form. There are many types of [input
+fields][] to choose from; we use the `type` attribute to specify the one we
+want. For this lab, we are using two: a text field (`type="text"`) and a submit
+button (`type="submit"`).
 
 If you look in the `index.html` file, you will see the following:
 
@@ -68,7 +69,7 @@ If you look in the `index.html` file, you will see the following:
 
 Now take a look at the page in your browser. The rendered form looks like this:
 
-[image here]
+![TaskLister input form](https://curriculum-content.s3.amazonaws.com/phase-1/javascript-events/task_lister.png)
 
 You can see each of the components that are in our form's HTML:
 
@@ -80,21 +81,21 @@ Let's take a closer look at the opening `<form>` tag. You'll see it includes an
 (optional) `id` attribute and two other attributes:
 
 ```html
-<form id="create-task-form" action="#" method="post">
+<form id="create-task-form" action="#" method="POST">
 ```
 
 Because HTML forms were designed to be handled by backend programming languages
 such as PHP, the `action` attribute would normally contain a path to the backend
-code that processes the data captured by the user. Because we will be handling
+code that processes the data captured from the user. Because we will be handling
 the form using JavaScript, we don't need to provide a path. By convention, we
 set that attribute to `"#"`.
 
 The `method` attribute specifies the _type_ of action we're executing when the
-form is submitted. The value of the `method` attribute (in this case, "POST") is
-an _HTTP Verb_. (Although it is not required, you will often see HTTP verbs in
-all caps.) We will learn more about HTTP Verbs in the next section. For now,
-just know that the `POST` method is used when we want to capture the data
-submitted by our form and use it in some way.
+form is submitted. The `method` attribute's value (in this case, "POST") is an
+_HTTP Verb_. (Although it is not required, you will often see HTTP verbs in all
+caps.) We will learn more about HTTP Verbs in the next section. For now, just
+know that the `POST` method is used when we want to capture the data submitted
+by our form and use it in some way.
 
 By default, the HTML `<form>` element submits the form and redirects the browser
 to a new url when the `<submit>` button is clicked. This default behavior makes
@@ -106,11 +107,11 @@ performing its default behavior.
 
 ### Suppress a Default Action with `Event.preventDefault()`
 
-The deliverables for this require you to use JavaScript to handle an event in a
-form based on clicking a submit button. To do this, you'll need to listen for a
-`submit` event on the `<form>` element. In order to _prevent_ the _default_
-behavior of the `submit` event, when our event listener "sees" the event, it
-needs to invoke the `preventDefault()` method on it.
+The deliverables for this lab require you to use JavaScript to handle the
+clicking of the submit button. To do this, you'll need to listen for a `submit`
+event on the `<form>` element. In order to _prevent_ the _default_ behavior of
+the `submit` event, when our event listener "sees" the event, it needs to invoke
+the `preventDefault()` method on it.
 
 Take a look at the [MDN Documentation on `Event.preventDefault()`][mdn-pd].
 You'll see how JavaScript is used to prevent a form element (checkbox) from
