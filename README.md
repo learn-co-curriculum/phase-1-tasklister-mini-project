@@ -124,7 +124,7 @@ Once you've got the required deliverables working, you may want to try to
 implement one or more of the following:
 
 * A delete function that will remove tasks from your list
-* A priority value selected from a dropdown that is used to determine the color
+* A priority value selected from a [dropdown][] that is used to determine the color
   of the text in the list (e.g. red for high priority, yellow for medium, green
   for low)
   * As an additional challenge, implement a sorting functionality that displays
@@ -138,3 +138,4 @@ implement one or more of the following:
 [mdn-pd]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 [form]: https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form
 [input fields]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
+[dropdown]: https://www.w3docs.com/learn-html/html-select-tag.html
