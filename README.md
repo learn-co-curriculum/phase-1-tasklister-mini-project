@@ -42,9 +42,8 @@ moving forward. If you take a look at the `index.html` file, you'll see that the
 * As a user, I expect to see the task string that I provided appear in the DOM
   after the submit button has been activated.
 
-> **Note:** [While the example][example] shows one possible working
-> implementation of the TaskLister app, yours can (and is encouraged to!) look
-> however you like!
+**Note:** [While the example][example] shows one possible working implementation
+of the TaskLister app, yours can (and is encouraged to!) look however you like!
 
 ### HTML Forms
 
