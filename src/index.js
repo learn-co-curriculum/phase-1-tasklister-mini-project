@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   newTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
     //create a variable called toDo holds the value of the targeted input.
-    const toDo = e.target.newtaskdescription.value
+    const newToDo = e.target.newtaskdescription.value
 
     //pass in the toDo variable as an argument to buildToDo. 
-    buildToDo(toDo);
+    buildToDo(newToDo);
 
     //after buildToDo function runs, we then reset the newTaskForm so the input is empty
     newTaskForm.reset()
@@ -19,27 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   //when user submits, we pass in the targeted input into buildToDo function
-  function buildToDo(toDo){
+  function buildToDo(newToDo){
     //first, the buildToDo function creates an li element and a button element. 
-    let li = document.createElement('li');
-    let btn = document.createElement('button')
+    let taskLi = document.createElement('li');
+    let deleteButton = document.createElement('button')
 
     //next, we set the textContent of the btn element to 'x'.
-    btn.textContent = 'x'
+    deleteButton.textContent = 'x'
 
     //after, we set the textContent of the li element to the todo parameter.
     //remember, when we submit, we are passing in targeted input into the parameters. 
-    li.textContent = `${toDo}`
+    taskLi.textContent = `${newToDo}`
 
     //next, we set the text content for the li and button element, we then append the new btn to the li.
-    li.appendChild(btn);
+    taskLi.appendChild(deleteButton);
 
     //then, we added the li element to the ul element with id of tasks
-    document.querySelector('#tasks').appendChild(li);
+    document.querySelector('#tasks').appendChild(taskLi);
   
   
     //finally, we attached a click event listener to the btn which invokes the handleDelete function
-    btn.addEventListener('click', handleDelete)
+    deleteButton.addEventListener('click', handleDelete)
   }
 
   //when the button element with the textContent of 'x' is clicked, this function will run.
