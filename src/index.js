@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //pass in the toDo variable as an argument to buildToDo. 
     buildToDo(toDo);
 
-    //after buildToDo function runs, we then reset the form so the input is empty
-    form.reset()
+    //after buildToDo function runs, we then reset the newTaskForm so the input is empty
+    newTaskForm.reset()
   })
 });
 
@@ -40,4 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     //finally, we attached a click event listener to the btn which invokes the handleDelete function
     btn.addEventListener('click', handleDelete)
+  }
+
+  //when the button element with the textContent of 'x' is clicked, this function will run.
+  function handleDelete(e){
+    //this function targets the parent node of the button and removes it.
+    //in this case, the parentNode of the button element is the li element. Which means that the li will then be removed form list.
+    e.target.parentNode.remove();
   }
