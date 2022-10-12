@@ -1,22 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let form = document.querySelector('form')
-  form.addEventListener('submit', (e) => {
+  //grabs all the necessary DOM elements.
+
+  //set the taskForm to a variable.
+  const newTaskForm = document.querySelector('form')
+
+  //attach a submit event listener to taskForm.
+  newTaskForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    buildToDo(e.target.newtaskdescription.value);
+    //create a variable called toDo holds the value of the targeted input.
+    const toDo = e.target.newtaskdescription.value
+
+    //pass in the toDo variable as an argument to buildToDo. 
+    buildToDo(toDo);
+
+    //after buildToDo function runs, we then reset the form so the input is empty
     form.reset()
   })
 });
-
-function buildToDo(todo){
-  let li = document.createElement('li');
-  let btn = document.createElement('button')
-  btn.addEventListener('click', handleDelete)
-  btn.textContent = 'x'
-  li.textContent = `${todo}  `
-  li.appendChild(btn);
-  document.querySelector('#tasks').appendChild(li);
-}
-
-function handleDelete(e){
-  e.target.parentNode.remove();
-}
