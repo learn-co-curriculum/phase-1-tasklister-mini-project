@@ -1,9 +1,9 @@
 # Challenge: TaskLister Mini-Project
- 
+
 ## Learning Goals
 
-* Build a functioning to-do list application
-* Suppress a default action with `event.preventDefault()`
+- Build a functioning to-do list application
+- Suppress a default action with `event.preventDefault()`
 
 ## Introduction
 
@@ -23,6 +23,11 @@ behavior in the browser.
 3. Put your JavaScript knowledge to the test and work your way through the
    deliverables
 
+Once you're done, be sure to commit and push your code up to GitHub, then submit
+the assignment using CodeGrade. Even though this lab does not have tests, it
+must still be submitted through CodeGrade in order to be marked as complete in
+Canvas.
+
 ### Structuring Your Code
 
 You've been provided with a basic HTML file, as well as an `index.js` file where
@@ -37,9 +42,9 @@ moving forward. If you take a look at the `index.html` file, you'll see that the
 
 ### Deliverables
 
-* As a user, I should be able to type a task into the input field.
-* As a user, I should be able to click some form of a submit button.
-* As a user, I expect to see the task string that I provided appear in the DOM
+- As a user, I should be able to type a task into the input field.
+- As a user, I should be able to click some form of a submit button.
+- As a user, I expect to see the task string that I provided appear in the DOM
   after the submit button has been activated.
 
 **Note:** [While the example][example] shows one possible working implementation
@@ -59,11 +64,16 @@ button (`type="submit"`).
 If you look in the `index.html` file, you will see the following:
 
 ```html
-    <form id="create-task-form" action="#" method="POST">
-      <label for="new-task-description">Task description:</label>
-      <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
-      <input type="submit" value="Create New Task">
-    </form>
+<form id="create-task-form" action="#" method="POST">
+  <label for="new-task-description">Task description:</label>
+  <input
+    type="text"
+    id="new-task-description"
+    name="new-task-description"
+    placeholder="description"
+  />
+  <input type="submit" value="Create New Task" />
+</form>
 ```
 
 Now take a look at the page in your browser. The rendered form looks like this:
@@ -80,7 +90,7 @@ Let's take a closer look at the opening `<form>` tag. You'll see it includes an
 (optional) `id` attribute and two other attributes:
 
 ```html
-<form id="create-task-form" action="#" method="POST">
+<form id="create-task-form" action="#" method="POST"></form>
 ```
 
 Because HTML forms were designed to be handled by backend programming languages
@@ -122,15 +132,15 @@ prevent `submit` from doing its default behavior in a similar fashion.
 Once you've got the required deliverables working, you may want to try to
 implement one or more of the following:
 
-* A delete function that will remove tasks from your list
-* A priority value selected from a [dropdown][] that is used to determine the color
-  of the text in the list (e.g. red for high priority, yellow for medium, green
-  for low)
-  * As an additional challenge, implement a sorting functionality that displays
+- A delete function that will remove tasks from your list
+- A priority value selected from a [dropdown][] that is used to determine the
+  color of the text in the list (e.g. red for high priority, yellow for medium,
+  green for low)
+  - As an additional challenge, implement a sorting functionality that displays
     the tasks in ascending or descending order based on priority
-* An additional input field (e.g. user, duration, date due)
-* Ability to edit tasks
-* Something of your choice! The main objective is to add a feature that allows
+- An additional input field (e.g. user, duration, date due)
+- Ability to edit tasks
+- Something of your choice! The main objective is to add a feature that allows
   the user's input to affect the DOM
 
 [example]: https://learn-co-curriculum.github.io/js-task-lister-lite/
