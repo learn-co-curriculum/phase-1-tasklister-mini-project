@@ -4,8 +4,7 @@
   "description": "One list, many tasks. Create a todo list in vanilla JS",
   "main": "src/index.js",
   "scripts": {
-    "postinstall": "gem install learn-co",
-    "test": "node_modules/browser-sync/bin/browser-sync.js start --config node_modules/learn-browser/bs-config.js"
+    "test": "mocha --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,10 @@
     "url": "https://github.com/learn-co-curriculum/js-task-lister-project/issues"
   },
   "homepage": "https://github.com/learn-co-curriculum/js-task-lister-project",
-  "devDependencies": {
-    "learn-browser": "^0.1.12"
+  "dependencies": {
+    "chai": "^4.2.0",
+    "jsdom": "^9.0",
+    "mocha": "5.2.0",
+    "mocha-jsdom": "~1.1.0"
   }
 }
