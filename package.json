@@ -27,6 +27,7 @@
     "chai": "^4.2.0",
     "jsdom": "^9.0",
     "mocha": "5.2.0",
-    "mocha-jsdom": "~1.1.0"
+    "mocha-jsdom": "~1.1.0",
+    "mocha-multi": "^1.1.7"
   }
 }
