@@ -1,8 +1,5 @@
-// your code here
 const form = document.querySelector('#create-task-form')
 const submitButton = document.querySelector("#create-task-form input[type='Submit']")
-console.log(submitButton)
-
 
 const createNewTask = (e) => {
   e.preventDefault()
@@ -19,9 +16,7 @@ const createNewTask = (e) => {
   }
 }
 
-const handleDeleteTask = (e) => {
-  e.target.parentNode.remove()
-}
+const handleDeleteTask = (e) => e.target.parentNode.remove()
 
 submitButton.addEventListener('click', createNewTask)
 
