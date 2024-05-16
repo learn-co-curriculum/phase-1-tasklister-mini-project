@@ -4,24 +4,34 @@
   <meta charset="UTF-8">
   <title>Flatiron Task Lister</title>
   <link rel="stylesheet" href="./style.css">
+  <script defer src="./src/index.js"></script>
 </head>
 <body>
   <div id="main-content">
     <h1>Task Lister Lite™️</h1>
 
-    <form id="create-task-form" action="" method="POST">
+    <form id="create-task-form" action="#" method="POST">
       <label for="new-task-description">Task description:</label>
       <input type="text" id="new-task-description" name="new-task-description" placeholder="description">
-      <input type="submit" value="Create New Task">
+      <label for="new-task-priority">Priority:</label>
+      <select name="new-task-priority" id="task-priority">
+        <option value="" disabled>Please select...</option>
+        <option value="low" >Low</option>
+        <option value="medium" >Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="submit" class="btn" value="Create New Task">
     </form>
 
     <div id="list">
       <h2>My Todos:</h2>
       <ul id="tasks">
       </ul>
+      <table id="task-table">
+      </table>
     </div>
 
-    <script src="./src/index.js"></script>
+    
   </div>
 
 </body>

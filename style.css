@@ -7,11 +7,80 @@ html {
 body {
   min-height: 100%;
   min-width: 100%;
-  background: linear-gradient(pink, violet);
+  background: linear-gradient(#f7d9d9, #f1c0c0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  font-size: 7px;
+select {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  /* background-color: #fff; */
+  color: #333;
+}
+
+.high {
+  font-size: 16px;
+  padding: 8px;
+  color: #f90404;
+}
+
+.medium {
+  font-size: 16px;
+  padding: 8px;
+  color: #eeb60e;
+}
+
+.low {
+  font-size: 16px;
+  padding: 8px;
+  color: #01b82f;
+}
+
+/* Basic button styles */
+.btn {
+  background-color: #007BFF; /* Blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for layout */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin for spacing */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.editBtn {
+  background-color: #fb7a02; /* Blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for layout */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin for spacing */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover state */
+.editBtn:hover {
+  background-color: #be6601; /* Darker blue on hover */
+}
+
+/* Hover state */
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 #main-content {
@@ -20,18 +89,18 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #list {
-  margin: 10px;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
