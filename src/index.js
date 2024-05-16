@@ -37,7 +37,6 @@ const createRow = (id, taskText, taskPriority, deleteBtn, editBtn) => {
   return tr
 }
 
-//Create edit button and return
 const createEditButton = (id) => {
   const editBtn = document.createElement('button')
   editBtn.style.marginLeft = '20px'
@@ -58,17 +57,11 @@ const createDeleteButton = (id) => {
   return btn
 }
 
-
 const handleTaskPOST = (taskText, taskPriority) => {
   return fetch('http://localhost:3000/tasks',{
     method: "POST",
-    headers: {
-      'Content-Type' : 'application/json'
-    },
-    body: JSON.stringify({
-      task: taskText,
-      priority: taskPriority
-    })
+    headers: {'Content-Type' : 'application/json'},
+    body: JSON.stringify({task: taskText, priority: taskPriority})
   })
   .then(res => res.json())
   .then(data => data)
@@ -111,7 +104,16 @@ const handleTaskPATCH = (e) => {
   })
   .then(res => res.json())
   .then(data => {
-    document.querySelector("#new-task-description").value = ''
+    resetAfterPATCH();
+  })
+  .catch(error => {
+    alert(`Something went wrong while trying to update task: ${taskText}`)
+  console.log(error)
+  })
+}
+
+const resetAfterPATCH = () => {
+  document.querySelector("#new-task-description").value = ''
     document.querySelector("#task-priority").value = ''
     submitButton.className = 'btn'
     submitButton.removeAttribute('task-id')
@@ -122,11 +124,6 @@ const handleTaskPATCH = (e) => {
       tr.remove()
     })
     initApp();
-  })
-  .catch(error => {
-    alert(`Something went wrong while trying to update task: ${taskText}`)
-  console.log(error)
-  })
 }
 
 const editTask = (e) => {
