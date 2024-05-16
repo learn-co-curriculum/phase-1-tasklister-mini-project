@@ -42,18 +42,45 @@ select {
   color: #01b82f;
 }
 
-button {
-  font-size: 14px;
-  padding: 8px 12px;
-  border: none;
-  background-color: #4a4a4a;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
+/* Basic button styles */
+.btn {
+  background-color: #007BFF; /* Blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for layout */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin for spacing */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
-button:hover {
-  background-color: #333;
+.editBtn {
+  background-color: #fb7a02; /* Blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for size */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for layout */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin for spacing */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 25px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover state */
+.editBtn:hover {
+  background-color: #be6601; /* Darker blue on hover */
+}
+
+/* Hover state */
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 #main-content {

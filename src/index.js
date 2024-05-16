@@ -1,37 +1,59 @@
 const form = document.querySelector('#create-task-form')
-const submitButton = document.querySelector("#create-task-form input[type='Submit']")
+const submitButton = document.querySelector("#create-task-form input[type='submit']")
 
 const createNewTask = (e) => {
   e.preventDefault()
   const taskText = e.target['new-task-description'].value
   const taskPriority = e.target['new-task-priority'].value
   if(taskText !== '' && taskPriority !== ''){
-    const tr = document.createElement('tr')
-    const td1 = document.createElement('td')
-    const td2 = document.createElement('td')
-    const td3 = document.createElement('td')
-    const btn = document.createElement('button')
-    const editBtn = document.createElement('button')
-    editBtn.style.marginLeft = '20px'
-    editBtn.textContent = 'Edit'
-    editBtn.addEventListener('click', ()=>console.log('edit clicked'))
-    btn.style.marginLeft = '20px'
-    btn.textContent = 'Delete'
-    btn.addEventListener('click', handleTaskDELETE)
-    tr.className = taskPriority
-    td1.textContent = taskText
-    td2.appendChild(btn)
-    td3.appendChild(editBtn)
-    tr.appendChild(td1)
-    tr.appendChild(td2)
-    tr.appendChild(td3)
-    document.querySelector('#task-table').appendChild(tr)
     handleTaskPOST(taskText, taskPriority).then(data => {
+      const tr = document.createElement('tr')
       tr.id = data.id
+      const td1 = document.createElement('td')
+      const td2 = document.createElement('td')
+      const td3 = document.createElement('td')
+      const editBtn = createEditButton(data.id);
+      const deleteBtn = createDeleteButton(data.id)
+      tr.className = taskPriority
+      td1.textContent = taskText
+      td2.appendChild(deleteBtn)
+      td3.appendChild(editBtn)
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      document.querySelector('#task-table').appendChild(tr)
+      document.querySelector("#new-task-description").value = ''
+      document.querySelector("#task-priority").value = ''
+      //form.reset()
     })
-    form.reset()
+    .catch(error => {
+      console.log(error)
+    })
+    
   }
 }
+
+//Create edit button and return
+const createEditButton = (id) => {
+  const editBtn = document.createElement('button')
+  editBtn.style.marginLeft = '20px'
+  editBtn.textContent = 'Edit'
+  editBtn.className = 'btn'
+  editBtn.setAttribute('task-id',id)
+  editBtn.addEventListener('click', editTask)
+  return editBtn
+}
+
+const createDeleteButton = (id) => {
+  const btn = document.createElement('button')
+  btn.style.marginLeft = '20px'
+  btn.textContent = 'Delete'
+  btn.className = 'btn'
+  btn.addEventListener('click', handleTaskDELETE)
+  btn.setAttribute('task-id',id)
+  return btn
+}
+
 
 const handleTaskPOST = (taskText, taskPriority) => {
   return fetch('http://localhost:3000/tasks',{
@@ -53,7 +75,7 @@ const handleTaskPOST = (taskText, taskPriority) => {
 }
 
 const handleTaskDELETE = (e) => {
-  const id = e.target.closest('tr').id
+  const id = e.target.attributes['task-id'].value
   const task = e.target.closest('tr').firstChild.textContent
   fetch(`http://localhost:3000/tasks/${id}`,{
     method: 'DELETE',
@@ -68,26 +90,71 @@ const handleTaskDELETE = (e) => {
   })
 }
 
-const handleDeleteTask = (e) => e.target.parentNode.remove()
+const handleTaskPATCH = (e) => {
+  e.preventDefault()
+  const taskText = e.target['new-task-description'].value
+  const taskPriority = e.target['new-task-priority'].value
+  id = submitButton.attributes['task-id'].value
+  fetch(`http://localhost:3000/tasks/${id}`,{
+    method: "PATCH",
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({
+      task: taskText,
+      priority: taskPriority
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    //initApp();
+    document.querySelector("#new-task-description").value = ''
+    document.querySelector("#task-priority").value = ''
+    submitButton.className = 'btn'
+    submitButton.removeAttribute('task-id')
+    submitButton.value = 'Create New Task'
+    form.removeEventListener('submit', handleTaskPATCH)
+    form.addEventListener('submit',createNewTask)
+    document.querySelectorAll('tr').forEach(tr => {
+      tr.remove()
+    })
+    initApp()
+  })
+  .catch(error => {
+    alert(`Something went wrong while trying to update task: ${taskText}`)
+    console.log(error)
+  })
+}
+
+const editTask = (e) => {
+  const task = e.target.closest('tr').firstChild.textContent
+  const priority = e.target.closest('tr').className
+  const id = e.target.attributes['task-id'].value
+  // console.log(id)
+  document.querySelector("#new-task-description").value = task
+  document.querySelector("#task-priority").value = priority
+  submitButton.className = 'editBtn'
+  submitButton.value = 'Edit Task'
+  submitButton.setAttribute('task-id',id)
+  form.removeEventListener('submit', createNewTask)
+  form.addEventListener('submit',handleTaskPATCH)
+}
 
 const renderTasks = (body) => {
+  document.querySelector("#new-task-description").value = ''
+  document.querySelector("#task-priority").value = ''
+  document.querySelectorAll('tr').forEach(tr => console.log(tr))
   body.forEach(item => {
     const tr = document.createElement('tr')
     const td1 = document.createElement('td')
     const td2 = document.createElement('td')
     const td3 = document.createElement('td')
-    const btn = document.createElement('button')
-    const editBtn = document.createElement('button')
-    editBtn.style.marginLeft = '20px'
-    editBtn.textContent = 'Edit'
-    editBtn.addEventListener('click', () => console.log('edit clicked'))
-    btn.style.marginLeft = '20px'
-    btn.textContent = 'Delete'
-    btn.addEventListener('click', handleTaskDELETE)
+    const editBtn = createEditButton(item.id)
+    const deleteBtn = createDeleteButton(item.id)
     tr.id = item.id
     tr.className = item.priority
     td1.textContent = item.task
-    td2.appendChild(btn)
+    td2.appendChild(deleteBtn)
     td3.appendChild(editBtn)
     tr.appendChild(td1)
     tr.appendChild(td2)
