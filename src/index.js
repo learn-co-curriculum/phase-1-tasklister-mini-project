@@ -45,17 +45,6 @@ lists.appendChild(del)
 
     }})
 
-// theme
-let theme = document.createElement("button")
-theme.textContent = "theme";
-theme.onclick = () => {
-  let newContent = prompt("theme ", task);
-  if(newContent !== ""){
-    lists.textContent = newContent
-    
-  }
-
-}
 
 
 
@@ -63,57 +52,6 @@ theme.onclick = () => {
 
 
 
-//   const form = document.getElementById("create-task-form");
-//   const taskList = document.getElementById("tasks");}
-  // your  code here
-//     form.addEventListener("submit", function(event)) {
-//     event.preventDefault();}
-
-//   const color = ["Low","Medium","HIgh"];
-//   color.reverse();
 
 
-//   const colorArray = ["red", "yellow", "green"]
-//   colorArray.reverse()
-//   const [red,yellow,green] = color
-//   console.log(red);
-//   console.log(yellow);
-//   console.log(green);
-
-
-
-// color.sort(function(red,yellow,green){
-//  let x = red.type.toLowerCase();
-// let y = yellow.toLowerCase();
-//   let z = green.type.toLowerCase()
-
-
-// if (x < y) {return -1;}
-// if (x > y) {return 1;}
-// if (x < y){return -1}
-
-// return 0;
-// }); 
-
-
-// document.addEventListener('DOMContentLoading',() => {
-//   console.log('After DOM loaded') 
-//   console.log(document.querySelector('div'))
-// })
-// console.log('Before DOM Loaded')
-// console.log(document.querySelector('div'))
-
-
-
-// const ThemeButton = document.getElementById("Theme-Button")
-// ThemeButton.addEventListener("mouseout", changeTheme)
-// function changeTheme{
-//   document.body.classList.toggle("darkmode")
-// }
-// const Button = document.getElementById("Button"){
-
-// }
-// ThemeButton.addEventListener("click", changeTheme)
-// function changeTheme{
-//   document.body.classList.toggle("darkmode")
 
