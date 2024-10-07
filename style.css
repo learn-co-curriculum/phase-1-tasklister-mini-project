@@ -1,37 +1,188 @@
-html {
-  height: 100%;
-  width: 100%;
-  font-family: "Titillium Web", sans-serif;
-}
-
-body {
-  min-height: 100%;
-  min-width: 100%;
-  background: linear-gradient(pink, violet);
-}
-
-button {
-  font-size: 7px;
-}
-
 #main-content {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+
 }
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #555;
+
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+
+}
+
+form input:focus, form select:focus {
+  border-color: #007bff;
+  outline: none;
+
+}
+
+form input[type="submit"] {
+  grid-column: span 2;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+
+}
+
 
 #list {
-  margin: 10px;
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 15px 20px 18px 18px;
-  border-radius: 5px;
-  box-shadow: 2px 5px 5px #333;
+  margin-top: 20px;
+
+}
+
+h2 {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+
+}
+
+
+#sort-tasks {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1em;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+
+}
+
+#sort-tasks:hover {
+  background-color: #218838;
+
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+li {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+li span {
+  flex-grow: 1;
+  font-size: 1.1em;
+  color: #333;
+
+}
+
+
+li span[style*="red"] {
+  color: red;
+
+}
+
+li span[style*="yellow"] {
+  color: yellow;
+
+}
+
+li span[style*="green"] {
+  color: green;
+
+}
+
+button.edit-task, button.delete-task {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+
+
+}
+
+button.edit-task:hover {
+  background-color: #17a2b8;
+
+}
+
+button.delete-task:hover {
+  background-color: #dc3545;
+
+}
+
+button.edit-task {
+  background-color: #17a2b8;
+
+}
+
+button.delete-task {
+  background-color: #dc3545;
+
 }
