@@ -23,24 +23,44 @@ document.addEventListener("DOMContentLoaded",(event) => {
     lists.appendChild(deleteButton); 
     deleteButton.onclick = () => {
       lists.remove()
-    } 
+    }
+let edit = document.createElement("button");
+edit.textContent = "edit";
+edit.onclick = () =>{
+  let newContent = prompt("Edit item", task);
+  if ( newContent !== "") {
+      lists.textContent = newContent;
+      lists.appendChild(del)
+      lists.appendChild(edit)
+  }
+};
+lists.appendChild(edit)
+let del = document.createElement("button");
+del.textContent = "X";
+del.onclick = () => {
+    lists.remove();
+}
+lists.appendChild(del)
     return lists;
 
-
-
     }})
-// let editButton = document.createElement("Button")
-//  editButton.textContent = "edit",
-// let.appendChild = (editButton)
-// let newList = prompt("edit current list", list.textContent);
-// if(newList == null && newList !== "") {
-// list.textContent = newList;
-// list.appendChild(editButton);
 
-// }
-// list.textContent = newList;
-// list.appendChild(editButton);
-// return lists;
+// theme
+let theme = document.createElement("button")
+theme.textContent = "theme";
+theme.onclick = () => {
+  let newContent = prompt("theme ", task);
+  if(newContent !== ""){
+    lists.textContent = newContent
+    
+  }
+
+}
+
+
+
+
+
 
 
 //   const form = document.getElementById("create-task-form");
