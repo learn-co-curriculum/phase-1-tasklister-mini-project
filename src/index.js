@@ -13,19 +13,16 @@ function init() {
         const text = input.value.trim();
 
         if (text === "") {
-            // Friendly prompt for empty submissions
             alert("Please enter a task first!");
             return;
         }
 
         buildToDo(text);
 
-        // Clear the input so the user can add another task immediately
         input.value = "";
     });
 }
 
-// If the DOM is still loading, wait for it; otherwise initialize now.
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
 } else {
