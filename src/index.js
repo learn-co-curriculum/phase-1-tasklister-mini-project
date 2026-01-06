@@ -1,7 +1,5 @@
 /**
- * Initialize form handling: attach submit handler to the task form.
- * Keeps behavior exactly the same but uses clearer names and small helpers
- * so the code reads more like natural language.
+ * Initialize form handling: attach submit handler to the task for
  */
 function init() {
     const form = document.getElementById("create-task-form");
