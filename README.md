@@ -148,3 +148,11 @@ implement one or more of the following:
 [form]: https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form
 [input fields]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
 [dropdown]: https://www.w3docs.com/learn-html/html-select-tag.html
+
+## Setup & Run Tests
+
+- **Fork & clone:** Fork the repo on GitHub and clone your fork to your machine.
+- **Install dependencies:** From the project root run `npm install`.
+- **Run tests:** Use `npm test` to run the Mocha/JSDOM tests.
+- **Browser manual test:** Open `index.html` in a browser to manually test the UI.
+- **Windows note:** If `npm` fails in PowerShell due to execution policy, run the commands in Git Bash or Command Prompt, or update your PowerShell execution policy.
