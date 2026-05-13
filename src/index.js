@@ -1,37 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#create-task-form")
-  form.addEventListener("submit", function(e) {
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault()
-  })
-  // document.querySelector('form').addEventListener('submit', function(e) {
-    // const taskValue = e.target.tasks.value
-    // const taskValue = document.querySelector(#tasks).value
+
     const taskValue = document.querySelector("#new-task-description").value
     miniProject(taskValue)
-    // console.log(addEventListener)
-    // console.log(miniProject)
+
     form.reset()
-   // #create-task-form POST?? 
   })
+})
 
 function miniProject(whateverWeWant) {
-console.log(miniProject)
+  console.log(whateverWeWant)
+
   const li = document.createElement("li")
   const btn = document.createElement("button")
-  li.textContent = taskText
+
+  li.textContent = whateverWeWant
   btn.textContent = "x"
 
   li.appendChild(btn)
-  
-  document.querySelector("#tasks").appendChild(li)
-  btn.addEventListener("click", performTask)
-  
-  
-  //p.appendChild(btn)
- 
 
-//  / console.log(btn)
- // console.log(tasks)
+  document.querySelector("#tasks").appendChild(li)
+
+  btn.addEventListener("click", performTask)
 }
 
 function performTask(e) {
